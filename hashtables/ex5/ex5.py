@@ -6,8 +6,17 @@ def finder(files, queries):
     """
     YOUR CODE HERE
     """
-    # Your code here
-
+    pathtable = {}
+    for file in files:
+        end = file.split("/")[-1]
+        if end in pathtable:
+            pathtable[end].append(file)
+        else:
+            pathtable[end] = [file]
+    result = []
+    for query in queries:
+        if query in pathtable:
+            result.extend(pathtable[query])
     return result
 
 
