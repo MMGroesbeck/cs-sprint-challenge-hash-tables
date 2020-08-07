@@ -9,6 +9,10 @@ def reconstruct_trip(tickets, length):
     """
     YOUR CODE HERE
     """
-    # Your code here
-
+    sources = { ticket.source: ticket for ticket in tickets}
+    this_ticket = sources["NONE"]
+    route = [this_ticket.destination]
+    while this_ticket.destination != "NONE":
+        this_ticket = sources[this_ticket.destination]
+        route.append(this_ticket.destination)
     return route
