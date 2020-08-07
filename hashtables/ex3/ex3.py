@@ -2,8 +2,15 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
-
+    tables = [{ v:i for i,v in enumerate(array)} for array in arrays]
+    result = []
+    for num in arrays[0]:
+        found = True
+        for table in tables:
+            if num not in table:
+                found = False
+        if found:
+            result.append(num)
     return result
 
 
