@@ -2,8 +2,8 @@ def has_negatives(a):
     """
     YOUR CODE HERE
     """
-    # Your code here
-
+    hashtable = { v:i for i,v in enumerate(a)}
+    result = [ num for num in a if (num > 0) and ((-1 * num) in hashtable)]
     return result
 
 
